@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	double A, A1, B, B1, x, y, a, b, k, c, d;
+	puts("Введите делимое и делитель для первого выражения:");
+	scanf_s("%lf %lf", &a, &b);
+	puts("Введите, чему равно первое выражение по условию:");
+	scanf_s("%lf", &k);
+	x = a / b;
+	printf("Первое выражение, посчитанное с помощью программы, равно %lf.\n", x);
+	puts("\n");
+	puts("Введите число  для второго выражения:");
+	scanf_s("%lf", &c);
+	puts("Введите, чему равно второе выражение по условию:");
+	scanf_s("%lf", &d);
+	y = sqrt(c);
+	printf("Второе выражение, посчитанное с помощью программы, равно %lf.\n", y);
+	puts("\n");
+	A = fabs(x-k);
+	B = fabs(y-d);
+	A1 = A * 100;
+	B1 = B * 100;
+	if ((A1 - A) < (B1 - B))
+		printf("Более точным выражением является %lf/%lf = %lf",a,b, x);
+	else
+		printf("Более точным выражением является %lf^0,5 = %lf",c, y);
+
+	// #3
+	double k, Abs, Otn;
+	puts("Введите число:");
+	scanf("%lf", &k);
+	Abs = fabs(k - floor(k));
+	Otn = Abs / fabs(floor(k));
+	printf("Предельные абсолютная и относительная погрешности равны соответсвенно %lf и %lf", Abs, Otn);
+
+	
+}
